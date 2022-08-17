@@ -8,13 +8,13 @@ public class Palindromic_pattern {
             for(int j = 1;j<=n-i;j++){
                 System.out.print(" ");
             }
-            //number
-            for(int j =i-1;j>=1;j--){
-                System.out.print(j+" ");
+            //descending numbers i.e 54321
+            for(int j =i;j>=1;j--){
+                System.out.print(j);
             }
-            //number
-            for(int j = 1;j<=i;j++){
-                System.out.print(j+" ");
+            //ascendings numbers  i.e 2345
+            for(int j = 2;j<=i;j++){
+                System.out.print(j);
             }
             System.out.println();
         }
