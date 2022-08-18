@@ -17,7 +17,7 @@ public class Solid_rhombus {
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("eEnter the value for n or no fo rows: ");
+        System.out.println("eEnter the value for n or no of rows: ");
         int n = sc.nextInt();
         solid_rhombus(n);
     }
