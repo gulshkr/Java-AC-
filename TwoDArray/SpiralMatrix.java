@@ -1,4 +1,4 @@
-package TwoDArray;
+package Twodarray;
 import java.util.*;
 public class SpiralMatrix {
     public static void spiralmatrix(int matrix[][]){
