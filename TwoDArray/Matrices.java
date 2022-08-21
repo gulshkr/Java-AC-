@@ -1,4 +1,4 @@
-package TwoDArray;
+package Twodarray;
 import java.util.*;
 public class Matrices {
     public static boolean search(int matrix[][],int key){
