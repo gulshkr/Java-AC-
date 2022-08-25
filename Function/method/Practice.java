@@ -16,28 +16,23 @@ public class Practice {
 
     //3rd check number if it is palindrome
     public static boolean isPalindrome(int n){
+        n = 0;
         int myNum = n;
         int reverse = 0;
-
-        if(myNum==0){
-            return true;
-        }
-        if(myNum%10==0 || myNum<0){
-            return false;
-        }
+        int lastdigit;
 
         while(myNum!=0){
-            int lastdigit = n%10;
-            reverse = reverse*10 + lastdigit;
+            lastdigit = myNum%10;
+            reverse = reverse * 10 + lastdigit;
             myNum = myNum/10;
         } 
 
         if(myNum == reverse){
-            return false;
+            return true;
         } else{
-        return true;
+            return false;
         }
-      }
+    }
 
     //4th search about & use the following methods of the math class in java Math.min() Math.mix() Math.sqrt() Math.pow() Math.avg() Math.abs()
     //min and max
@@ -56,13 +51,12 @@ public class Practice {
     
     
     public static void main(String[] args) {
-        System.out.println("Enter ");
         // System.out.println("The average of three numbers are: "+average(2, 3, 10));
         // System.out.println("the number you enterd is : "+isEven(11));
-        // System.out.println(isPalindrome(0));
-        Scanner sc = new Scanner(System.in);
-        int myNum = sc.nextInt();
-        System.out.println(isPalindrome(myNum));
+        System.out.println(isPalindrome(0));
+        System.out.println(isPalindrome(121));
+        System.out.println(isPalindrome(-121));
+        System.out.println(isPalindrome(123));
         // Practice obj = new Practice();
         // obj.maxMin(2,3);
         // obj.sQrt(4);
