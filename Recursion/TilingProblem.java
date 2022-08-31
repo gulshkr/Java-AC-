@@ -8,14 +8,17 @@ public class TilingProblem {
         }
 
         //vertical choice 
-        int fnm1 = tilingProblem(n-1); //fnm1 = f of n - 1
+        // int fnm1 = tilingProblem(n-1); //fnm1 = f of n - 1
 
-        //horizontally
-        int fnm2 = tilingProblem(n-2); //fnm2 = f of n - 2
+        // //horizontally
+        // int fnm2 = tilingProblem(n-2); //fnm2 = f of n - 2
 
-        //find total ways
-        int totWays = fnm1 + fnm2;
-        return totWays;
+        // //find total ways
+        // int totWays = fnm1 + fnm2;
+        // return totWays;
+        
+        //----------> or you can do it in a single line
+        return tilingProblem(n-1) + tilingProblem(n-1);
     }
     public static void main(String[] args) {
         System.out.println(tilingProblem(3));
