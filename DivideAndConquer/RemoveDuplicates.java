@@ -1,4 +1,4 @@
-package Recursion;
+package DivideAndConquer;
 
 import javax.print.DocFlavor.STRING;
 
