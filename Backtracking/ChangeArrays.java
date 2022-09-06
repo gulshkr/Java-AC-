@@ -9,8 +9,8 @@ public class ChangeArrays {
         }
         //Recursion(kaam)
         arr[i] = val;
-        changeArrays(arr, i+1, val+1);
-        arr[i] = arr[i]-2;
+        changeArrays(arr, i+1, val+1); //function call step
+        arr[i] = arr[i]-2;  //Backtracking step
     }
     public static void printArray(int arr[]){
         for(int i =0;i<arr.length;i++){
