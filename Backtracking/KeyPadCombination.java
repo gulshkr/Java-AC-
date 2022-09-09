@@ -23,7 +23,7 @@ public class KeyPadCombination {
         bfs(0, len, new StringBuilder(), D);
     }
 
-
+    //pos - this is the position of the character L listed above a,b,c,d....
     public static void bfs(int pos,int len,StringBuilder sb,String D){
         if(pos==len){
             System.out.println(sb.toString());
@@ -37,10 +37,6 @@ public class KeyPadCombination {
 
     public static void main(String[] args) {
         letterCombination("23");
-        
-        // Scanner sc = new Scanner(System.in);
-        // int D = sc.nextInt();
-        // letterCombination("D");
         
     }
     
