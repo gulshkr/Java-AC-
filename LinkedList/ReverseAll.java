@@ -152,6 +152,7 @@ public class ReverseAll {
         return helper(head, key);
     }
 
+    //Reverse linked list
     public void reverse(){
         Node prev = null;
         Node curr = tail = head;

@@ -152,6 +152,7 @@ public class PalindromeInLL {
         return helper(head, key);
     }
 
+    //Reverse Linked list
     public void reverse(){
         Node prev = null;
         Node curr = tail = head;
@@ -178,17 +179,51 @@ public class PalindromeInLL {
         return slow;//mid Node
     }
 
-    //
+    //Check if it is palinddrome
+    public boolean checkPalindrome(){
+        if(head==null || head.next == null){
+            return true;
+        }
+    
+        //Step -1 - find mid
+        Node midNode = findMid(head);
+
+        //Step - 2 - Reverse 2nd half
+        Node prev = null;
+        Node curr = midNode;
+        Node next;
+        while(curr!=null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        Node right = prev; //right half head
+        Node left = head;
+
+        //Step-3 - Check left half & right half
+        //check if it is equal
+        while(right!=null){
+            if(left.data!=right.data){
+                return false;
+            }
+            left = left.next;
+            right = right.next;
+        }
+        return true;
+    }
     public static void main(String[] args) {
         PalindromeInLL ll = new PalindromeInLL();
        
-        ll.addFirst(2);
-        ll.addFirst(1);
-        ll.addLast(3);
-        ll.addLast(4);
+        ll.addLast(1);
+        ll.addLast(2);
+        ll.addLast(2);
+        ll.addLast(1);
         ll.print();
-        ll.reverse();
-        ll.print();
+        // ll.reverse();
+        // ll.print();
+        System.out.println(ll.checkPalindrome());
+        
        
 
     }
