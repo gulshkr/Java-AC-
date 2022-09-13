@@ -1,6 +1,6 @@
 package LinkedList;
 
-public class LinkedList {
+public class AddInMiddle {
     public static class Node{
         int data;
         Node next;
@@ -13,11 +13,13 @@ public class LinkedList {
 
     public static Node head;
     public static Node tail;
+    public static int size;
 
     //Add first function
     public void addFirst(int data){
         //Step1 - create a new node
         Node newNode = new Node(data);
+        size++;
         if(head==null){
             head = tail = newNode;
             return;
@@ -33,6 +35,7 @@ public class LinkedList {
     //add Last function
     public void addLast(int data){
         Node newNode = new Node(data);
+        size++;
         if(head==null){
             head = tail = newNode;
             return;
@@ -54,18 +57,37 @@ public class LinkedList {
         }
         System.out.println("null");
     }
+
+    //add in the middle
+    public void addmid(int idx,int data){
+        if(idx==0){
+            addFirst(data);
+            return;
+        }
+        Node newNode = new Node(data);
+        size++;
+        Node temp = head;
+        int i =0;
+        while(i<idx-1){
+            temp = temp.next;
+            i++;
+        }
+
+        //i = idx-1; temp->prev
+        newNode.next=temp.next;
+        temp.next=newNode;
+    }
+
     public static void main(String[] args) {
-        LinkedList ll = new LinkedList();
-        // ll.print();
-        // ll.addFirst(2);
-        ll.print();
+        AddInMiddle ll = new AddInMiddle();
+       
+        ll.addFirst(2);
         ll.addFirst(1);
-        ll.print();
         ll.addLast(3);
+        ll.addLast(4);
+        ll.addmid(2,7);
         ll.print();
-        // ll.addLast(4);
-        // ll.print();
-        
+        System.out.println(ll.size);
 
     }
     
