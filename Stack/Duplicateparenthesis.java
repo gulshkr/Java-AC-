@@ -35,8 +35,10 @@ public class Duplicateparenthesis {
         //Valid string given
         String str = "((a+b))"; //true
         String str1 = "(a-b)";//false
+        String str2 = "((a=b)+c)";
         System.out.println(isDuplicate(str));
         System.out.println(isDuplicate(str1));
+        System.out.println(isDuplicate(str2));
     }
     
 }
