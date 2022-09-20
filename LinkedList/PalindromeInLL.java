@@ -1,5 +1,7 @@
 package LinkedList;
 
+import javax.xml.transform.Source;
+
 public class PalindromeInLL {
     public static class Node{
         int data;
@@ -179,7 +181,7 @@ public class PalindromeInLL {
         return slow;//mid Node
     }
 
-    //Check if it is palinddrome
+    //Check if it is palindrome
     public boolean checkPalindrome(){
         if(head==null || head.next == null){
             return true;
@@ -219,7 +221,7 @@ public class PalindromeInLL {
         ll.addLast(2);
         ll.addLast(2);
         ll.addLast(1);
-        ll.print();
+        // System.out.println(ll);
         // ll.reverse();
         // ll.print();
         System.out.println(ll.checkPalindrome());
