@@ -1,3 +1,1 @@
-
-
-
+//Write an algorithm to replace the value of each numbers with its corresponding index value in the list in java ?
