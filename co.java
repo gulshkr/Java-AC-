@@ -1,24 +1,27 @@
-
-
-//Given an array nums, removing the triplets from last the relative order of the elements should be kept the same in java ?
+//Caesar cipher encryption is done by replacing each letter at 3 position to the left ?
 public class co{
-    public static void main(String[] args) {
-        
-    
-int[] nums = {2,4,2,2,7,5,6,7,8,6,6,2,6,7,6};
-int[] ans = new int[6];
-int count=1; 
-for(int i=0;i<nums.length;i++){
-   for(int j=0;j<nums.length;j++){
-     if(nums[i] == nums[j]){
-        if(count < 3){
-         count++;
-         ans[i] = nums[j];
-        }
-     }
-     System.out.print(ans[i]+" ");
-   }
-   System.out.println();
+   
+static String cipher(String msg, int shift){
+    String s = "";
+    int len = msg.length();
+    for(int x = 0; x < len; x++){
+        char c = (char)(msg.charAt(x) + shift);
+        if (c > 'z')
+            s += (char)(msg.charAt(x) - (26-shift));
+        else
+            s += (char)(msg.charAt(x) + shift);
+    }
+    return s;
+}
+   
+public static void main(String[] args) {
+   
+   
+   System.out.println(cipher("abc", 3));  //prints def
+   System.out.println(cipher("xyz", 3));  //prints abc
+   System.out.println(cipher("nrfzh",3));
 }
 }
-}
+
+
+
