@@ -1,7 +1,7 @@
 package BinaryTree;
 import java.util.*;
-//Approach 2nd for the finding of lowest common ancestor
-public class LowestCommonAncestorA2 {
+//kth Ancestor of node
+public class KthAncestorOfNode {
     static class Node{
         int data;
         Node left;
@@ -15,27 +15,27 @@ public class LowestCommonAncestorA2 {
         }
     }
 
-    public static Node lca2(Node root,int n1,int n2){
+    public static int KAncestor(Node root,int n,int k){
         if(root == null){
-            return null;
+            return -1;
         }
-        if(root.data == n1 || root.data == n2 ){
-            return root;
-        }
-
-        Node leftlca = lca2(root.left, n1, n2);
-        Node rightlca = lca2(root.right, n1, n2);
-
-        //leftLCA = val rightLCA = null
-        if(rightlca == null){  //if one side is it means that the value must lie on the other side of the tree so we return that
-            return leftlca;
-        }
-        if(leftlca == null){
-            return rightlca;
+        if(root.data == n){
+            return 0;
         }
 
-        return root;
+        int leftDist = KAncestor(root.left, n, k);
+        int rightDist = KAncestor(root.right, n, k);
 
+        if(leftDist == -1 && rightDist == -1){
+            return -1;
+        }
+
+        int max = Math.max(leftDist, rightDist);
+        if(max+1 == k){
+            System.out.println(root.data);
+        }
+
+        return max+1;
     }
     public static void main(String[] args) {
          /*
@@ -53,10 +53,8 @@ public class LowestCommonAncestorA2 {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
 
-        int n1 = 4, n2 = 7;
-        System.out.println(lca2(root, n1, n2).data);
-
-        
+        int n = 5, k = 2;
+        KAncestor(root, n, k);
     }
     
 }

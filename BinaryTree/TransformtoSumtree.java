@@ -1,7 +1,8 @@
 package BinaryTree;
 import java.util.*;
-//Approach 2nd for the finding of lowest common ancestor
-public class LowestCommonAncestorA2 {
+//transform to Sum tree 
+
+public class TransformtoSumtree {
     static class Node{
         int data;
         Node left;
@@ -14,28 +15,29 @@ public class LowestCommonAncestorA2 {
             this.right = null;
         }
     }
+    public static int transform(Node root){
+        if(root==null){
+            return 0;
+        }
+        int leftChild = transform(root.left);
+        int rightChild = transform(root.right);
 
-    public static Node lca2(Node root,int n1,int n2){
+        int data = root.data;
+        int newLeft = root.left == null ? 0 : root.left.data;
+        int newRight = root.right == null ? 0 : root.right.data;
+        root.data = newLeft + leftChild + newRight + rightChild;
+
+        return data;
+    }
+
+    public static void preorder(Node root){
         if(root == null){
-            return null;
-        }
-        if(root.data == n1 || root.data == n2 ){
-            return root;
+            return;
         }
 
-        Node leftlca = lca2(root.left, n1, n2);
-        Node rightlca = lca2(root.right, n1, n2);
-
-        //leftLCA = val rightLCA = null
-        if(rightlca == null){  //if one side is it means that the value must lie on the other side of the tree so we return that
-            return leftlca;
-        }
-        if(leftlca == null){
-            return rightlca;
-        }
-
-        return root;
-
+        System.out.print(root.data+" ");
+        preorder(root.left);
+        preorder(root.right);
     }
     public static void main(String[] args) {
          /*
@@ -52,9 +54,9 @@ public class LowestCommonAncestorA2 {
         root.left.right = new Node(5);
         root.right.left = new Node(6);
         root.right.right = new Node(7);
+        transform(root);
+        preorder(root);
 
-        int n1 = 4, n2 = 7;
-        System.out.println(lca2(root, n1, n2).data);
 
         
     }
