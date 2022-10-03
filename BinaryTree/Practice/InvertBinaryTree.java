@@ -13,11 +13,29 @@ public class InvertBinaryTree {
         }
     }
 
-    static boolean isMirror(Node root){
+    static Node isMirror(Node root){
         if(root==null){
-            return true;
+            return root;
         }
+
+        /*do the subtrees */
+        Node left = isMirror(root.left);
+        Node righ = isMirror(root.right);
+
+        return root;
     }
+    void inOrder(Node root){
+        if(root==null){
+            return;
+        }
+        inOrder(root.left);
+        System.out.print(root.data+" ");
+
+        inOrder(root.right);
+    }
+
+    
+
     public static void main(String[] args) {
         
     }
