@@ -1,14 +1,14 @@
 package BinaryTree;
 import java.util.*;
 //Build tree preorder
-public class BuildTreePreorder {
+public class Basic {
     //first create a class Node
     static class Node{
         int data;
         Node left;
         Node right;
 
-        //constructor  under which ddata will come
+        //constructor  under which data will come
         Node(int data){
             this.data = data;
             this.left = null;
