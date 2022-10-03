@@ -105,7 +105,7 @@ public class Basic {
 
         innorder(root);
 
-        //this is for searcch 
+        //this is for search 
         // if(search(root, 11)){
         //     System.out.println("Found");
         // } else{
