@@ -27,7 +27,7 @@ public class InvertBinaryTree {
         Node left = invert(root.left);
         Node right = invert(root.right);
 
-        /*swap the left ans right */
+        /*swap the left and right */
         root.left = right;
         root.right = left;
 
