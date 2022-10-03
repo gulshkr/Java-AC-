@@ -51,6 +51,8 @@ public class Basic {
             return search(root.right, key);
         }
     }
+
+    //Delete in binary search treee
     public static void main(String[] args) {
         // int values[] = {5,1,3,4,2,7};
         int values[] = {8,9,7,1,4,3,2,5,6,10};
