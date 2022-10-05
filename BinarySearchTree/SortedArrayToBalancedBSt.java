@@ -11,11 +11,27 @@ public class SortedArrayToBalancedBSt {
         }
     }
 
+    //preorder
+    public static void preorder(Node root){
+        if(root == null){
+            return;
+        }
+
+        System.out.print(root.data+" ");
+        preorder(root.left);
+        preorder(root.right);
+    }
+
+    //Sorting
     public static Node createBST(int arr[],int st,int end){
+        if(st>end){
+            return null;
+        }
         int mid = (st+end)/2;
         Node root = new Node(arr[mid]);
         root.left=createBST(arr, st,mid-1);
         root.right = createBST(arr, mid+1, end);
+        return root;
 
     }
     public static void main(String[] args) {
@@ -27,6 +43,9 @@ public class SortedArrayToBalancedBSt {
                 / \  /  \
                3  6 10  12
         */
+
+        Node root = createBST(arr, 0, arr.length-1);
+        preorder(root); 
     }
     
 }
