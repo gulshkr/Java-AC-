@@ -22,6 +22,7 @@ public class Merge2BST {
         getInorder(root.right, arr);
 
     }
+    //Ceate a BST
     public static Node createBST(ArrayList<Integer> arr,int st,int end){
         if(st>end){
             return null;
@@ -32,6 +33,7 @@ public class Merge2BST {
         root.right = createBST(arr, mid+1, end);
         return root;
     }
+    //Merge
     public static Node mergeBSTs(Node root1,Node root2){
         //Step 1
         ArrayList<Integer> arr1 = new ArrayList<>();
@@ -96,6 +98,7 @@ public class Merge2BST {
         Node root2 = new Node(9);
         root2.left = new Node(3);
         root2.right = new Node(12);
+        //O(n+m) -> linear
 
         /*
                    3
