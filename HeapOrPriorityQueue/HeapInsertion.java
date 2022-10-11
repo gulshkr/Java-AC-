@@ -22,7 +22,7 @@ public class HeapInsertion {
         }
     }
     public static void main(String[] args) {
-        int arr[] = {2,}
+        // int arr[] = {2,}
         
     }
     
