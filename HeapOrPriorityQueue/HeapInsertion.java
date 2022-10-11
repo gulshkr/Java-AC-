@@ -6,6 +6,7 @@ public class HeapInsertion {
     static class Heap{
         ArrayList<Integer> arr = new ArrayList<>();
 
+        //Add
         public void add(int data){
             //add at last index
             arr.add(data);
@@ -18,6 +19,9 @@ public class HeapInsertion {
                 int temp = arr.get(x);
                 arr.set(x, arr.get(par));
                 arr.set(par, temp);
+
+                x = par;
+                par = (x-1)/2;
             }
         }
 
@@ -56,7 +60,7 @@ public class HeapInsertion {
 
             //step - 1 - swap first & last
             int temp = arr.get(0);
-            arr.set(0, arr.size()-1);
+            arr.set(0, arr.get(arr.size()-1));
             arr.set(arr.size()-1, temp);
 
             //step - 2 - delete last
@@ -66,9 +70,22 @@ public class HeapInsertion {
             heapify(0);
             return data;
         }
+
+        public boolean isEmpty(){
+            return arr.size() == 0;
+        }
     }
     public static void main(String[] args) {
-        // int arr[] = {2,}
+        Heap h = new Heap();
+        h.add(3);
+        h.add(4);
+        h.add(1);
+        h.add(5);
+
+        while(!h.isEmpty()){
+            System.out.print(h.peek()+" ");
+            h.remove();
+        }
         
     }
     
