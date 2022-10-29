@@ -21,6 +21,7 @@ class NodeComparator implements Comparator<Node>{
         return 0;
     }
 }
+
 public class MergeKSortedLinkedList {
     static Node mergeKList(Node[] arr,int K){
         PriorityQueue<Node> queue = new PriorityQueue<>(new NodeComparator());
