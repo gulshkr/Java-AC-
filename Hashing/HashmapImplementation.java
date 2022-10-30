@@ -1,4 +1,5 @@
 package Hashing;
+import java.lang.reflect.Array;
 import java.util.*;
 public class HashmapImplementation {
     static class HashMap<K,V>{  //generic type - it can be like anything int, char , etc (K & V)
@@ -47,7 +48,7 @@ public class HashmapImplementation {
          //Rehash
          private void rehash(){
             LinkedList<Node> oldBuck[] = buckets;
-            buckets = new LinkedList[N*2];
+            buckets = new LinkedList[N*2];  
             N = 2 * N;
             for(int i =0;i<buckets.length;i++){
                 buckets[i] = new LinkedList<>();
@@ -146,6 +147,10 @@ public class HashmapImplementation {
         for(String key: keys){
             System.out.println(key);
         }
+
+        System.out.println(hm.get("India"));
+        System.out.println(hm.remove("India"));
+        System.out.println(hm.get("India"));
     }
     
 }
