@@ -1,5 +1,4 @@
 package Hashing;
-import java.lang.reflect.Array;
 import java.util.*;
 public class HashmapImplementation {
     static class HashMap<K,V>{  //generic type - it can be like anything int, char , etc (K & V)
