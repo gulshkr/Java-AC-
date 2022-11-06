@@ -14,8 +14,7 @@ public class UnionandIntersection {
         for(int i =0;i<arr2.length;i++){
             set.add(arr2[i]);
         }
-        System.out.println("union size = "+set.size());
-        System.out.println("union = "+set);
+        System.out.println("union size = "+set.size()+" and elements are "+set);
 
         //intersection
         set.clear();
@@ -28,7 +27,7 @@ public class UnionandIntersection {
             if(set.contains(arr2[i])){
                 count++;
                 set.remove(arr2[i]);
-                System.out.println("intersection = "+set);
+                System.out.println("intersection = "+ arr2[i]);
             }
         }
         
