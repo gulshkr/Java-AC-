@@ -3,7 +3,7 @@ import java.util.*;
 public class Print_subarray {
     public static void printSubarray(int numbers[]){
         int currSum=0;
-        int tp = 0;
+        int tp = 0; // total pair
         //start
         for(int i =0;i<numbers.length;i++){
             int start = i;
