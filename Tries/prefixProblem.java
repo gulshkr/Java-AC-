@@ -32,7 +32,7 @@ public class prefixProblem {
         curr.eow = true;
     }
 
-    public static void finddPrefix(Node root,String ans){
+    public static void finddPrefix(Node root,String ans){  //O(L) longest word in my trie
         if(root == null){
             return;
         }
