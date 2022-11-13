@@ -1,8 +1,6 @@
 // for more notes page no - 513
 package Tries.Practice;
-
-import java.util.List;
-
+import java.util.*;
 public class longestwordInDictionary {
     public static class Node{
         char data;
@@ -63,8 +61,10 @@ public class longestwordInDictionary {
         return ans;
     }
     public static void main(String[] args) {
+        // we always need to create an object in order to refer to a non-static variable from a static context. Whenever a new instance is created, a new copy of all the non-static variables and methods are created. By using the reference of the new instance, these variables can be accessed.
+        longestwordInDictionary res = new longestwordInDictionary();
         String words[] = {"w","wo","wor","worl","world"};
-        System.out.println(longestWord(words));
+        System.out.println(res.longestWord(words));
         
     }
     
