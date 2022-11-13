@@ -3,3 +3,4 @@
 # Always push your code to github, it also help you track yourself
 # Questions are under the file practice question
 # answers are in the same too
+# Remember one thing if you get sometime error then always check if the function is static because I got this error so many times, it might help you too.
