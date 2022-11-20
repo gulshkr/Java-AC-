@@ -1,6 +1,6 @@
 package Graph;
 import java.util.*;
-public class BFS {
+public class DFS {
     static class Edge{
         int src;
         int dest;
@@ -11,6 +11,7 @@ public class BFS {
             this.wt = w;
         }
     }
+
     static void createGraph(ArrayList<Edge> graph[]){
         for(int i=0;i<graph.length;i++){
             graph[i] = new ArrayList<>();
@@ -48,21 +49,15 @@ public class BFS {
 
     }
 
-    public static void bfs(ArrayList<Edge>[] graph){  //O(V+E) 
-        Queue<Integer> q = new LinkedList<>();
-        boolean vis[] = new boolean[graph.length];
-        q.add(0); //source = 0
+    public static void dfs(ArrayList<Edge>[] graph,int curr,boolean vis[]){
+        //visit
+        System.out.print(curr +" ");
+        vis[curr] = true;
 
-        while(!q.isEmpty()){
-            int curr = q.remove();
-
-            if(!vis[curr]){  //visit curr
-                System.out.print(curr+" ");
-                vis[curr] = true;
-                for(int i =0;i<graph[curr].size();i++){
-                    Edge e = graph[curr].get(i);
-                    q.add(e.dest);
-                }
+        for(int i =0;i<graph[curr].size();i++){
+            Edge e = graph[curr].get(i);
+            if(!vis[e.dest]){
+                dfs(graph, e.dest, vis);
             }
         }
     }
@@ -77,8 +72,7 @@ public class BFS {
         int v = 7;
         ArrayList<Edge> graph[] = new ArrayList[v];
         createGraph(graph);
-        bfs(graph);
-
+        dfs(graph, 0, new boolean[v]);
     }
     
 }
