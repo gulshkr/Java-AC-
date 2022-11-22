@@ -62,6 +62,7 @@ public class HasPath {
         }
     }
 
+    //time complexity - O(V+E) vertex plus edge
     public static boolean hasPath(ArrayList<Edge>[] graph,int src,int dest,boolean vis[]){
         if(src == dest ){
             return true;
